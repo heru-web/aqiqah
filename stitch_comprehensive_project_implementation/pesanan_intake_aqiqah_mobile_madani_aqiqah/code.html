@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madani Aqiqah ERP - Pesanan &amp; Intake</title>
+<!-- Google Fonts: Hanken Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#6f7973",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a6f2d1",
+            "inverse-primary": "#8bd6b6",
+            "inverse-surface": "#283044",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#1b6b51",
+            "outline-variant": "#bec9c2",
+            "secondary": "#904d00",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-surface-variant": "#3f4944",
+            "on-secondary-container": "#663500",
+            "on-tertiary-fixed-variant": "#00513a",
+            "tertiary": "#004530",
+            "on-primary-container": "#8bd6b7",
+            "on-tertiary-fixed": "#002115",
+            "surface-container-low": "#f2f3ff",
+            "surface": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#fe932c",
+            "on-primary-fixed-variant": "#00513b",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#005f44",
+            "on-primary-fixed": "#002116",
+            "primary-fixed-dim": "#8bd6b6",
+            "tertiary-fixed": "#97f5cc",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2f1500",
+            "on-secondary-fixed-variant": "#6e3900",
+            "primary-container": "#065f46",
+            "secondary-fixed": "#ffdcc3",
+            "surface-bright": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#7cd9b1",
+            "on-surface": "#131b2e",
+            "primary": "#004532"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "caption": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "label-mono-sm": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "label-mono-md": ["JetBrains Mono"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-mono-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen pb-28">
+<!-- Mobile Top Bar with App Context and Action Icons -->
+<header class="fixed top-0 left-0 right-0 w-full z-40 bg-surface-container-lowest shadow-sm">
+<!-- Row 1: System Title & Action -->
+<div class="flex items-center justify-between px-space-md py-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<button aria-label="Kembali" class="flex items-center justify-center w-8 h-8 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">Madani Aqiqah Ops</span>
+<h1 class="font-title-md text-title-md text-primary font-bold leading-tight">Daftar Pesanan &amp; Intake</h1>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 bg-primary-container text-surface-container-lowest px-3 py-1.5 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform shadow-sm hover:bg-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>Pesanan Baru</span>
+</button>
+</div>
+<!-- Row 2: Tactical Search Field -->
+<div class="px-space-md py-space-xs bg-surface-container-lowest">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low pl-9 pr-8 py-2 rounded-lg text-body-sm font-body-sm placeholder:text-outline text-on-surface border border-outline-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="Cari ID Pesanan, Sohibul Aqiqah, atau Bayi..." type="text"/>
+<button class="material-symbols-outlined absolute right-2.5 text-outline text-[16px] hover:text-on-surface" data-icon="tune">tune</button>
+</div>
+</div>
+<!-- Row 3: Horizontal Filter Status Chip Scroll -->
+<div class="px-space-md pb-2 pt-1 flex gap-2 overflow-x-auto no-scrollbar border-b border-outline-variant/30">
+<!-- Active Pill: Semua -->
+<button class="whitespace-nowrap px-3 py-1 rounded-full text-caption font-caption font-semibold bg-primary text-surface-container-lowest shadow-sm flex items-center gap-1">
+<span>Semua</span>
+<span class="bg-surface-container-lowest/20 px-1.5 py-0.2 rounded-full font-label-mono-sm text-[10px]">128</span>
+</button>
+<!-- Pill: Dikonfirmasi -->
+<button class="whitespace-nowrap px-3 py-1 rounded-full text-caption font-caption text-on-surface-variant bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:text-primary transition-colors flex items-center gap-1">
+<span>Dikonfirmasi</span>
+<span class="bg-surface-container-highest px-1.5 py-0.2 rounded-full font-label-mono-sm text-[10px] text-on-surface">24</span>
+</button>
+<!-- Pill: Disembelih -->
+<button class="whitespace-nowrap px-3 py-1 rounded-full text-caption font-caption text-on-surface-variant bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:text-primary transition-colors flex items-center gap-1">
+<span>Disembelih</span>
+<span class="bg-surface-container-highest px-1.5 py-0.2 rounded-full font-label-mono-sm text-[10px] text-on-surface">18</span>
+</button>
+<!-- Pill: Dimasak -->
+<button class="whitespace-nowrap px-3 py-1 rounded-full text-caption font-caption text-on-surface-variant bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:text-primary transition-colors flex items-center gap-1">
+<span>Dimasak</span>
+<span class="bg-surface-container-highest px-1.5 py-0.2 rounded-full font-label-mono-sm text-[10px] text-on-surface">32</span>
+</button>
+<!-- Pill: Dikirim -->
+<button class="whitespace-nowrap px-3 py-1 rounded-full text-caption font-caption text-on-surface-variant bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:text-primary transition-colors flex items-center gap-1">
+<span>Dikirim</span>
+<span class="bg-surface-container-highest px-1.5 py-0.2 rounded-full font-label-mono-sm text-[10px] text-on-surface">12</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="mt-36 px-space-md flex flex-col gap-3">
+<!-- KPI / Compact Batch Header -->
+<div class="flex items-center justify-between py-1 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Batch Pemotongan &amp; Dapur Hari Ini</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">08 Nov 2026</span>
+</div>
+<!-- Active Order Card 1: Detailed Primary Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden relative">
+<!-- 3px Emerald Top Accent Notch -->
+<div class="h-[3px] w-full bg-primary-container"></div>
+<div class="p-4 flex flex-col gap-3">
+<!-- Header row: Code, Tag, Time -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-primary">#ORD-2026-1108-01</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-secondary-fixed/50 text-secondary border border-secondary/20 font-label-mono-sm text-[10px] font-semibold tracking-wide">
+                COOKED
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Bpk. Rizky Ramadhan</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Target: 11:30 WIB</span>
+</div>
+<!-- Detail Bayi & Kambing Pill Container -->
+<div class="bg-surface-container-low/70 rounded-lg p-2.5 flex items-center justify-between border border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="child_care">child_care</span>
+<div>
+<p class="font-title-sm text-title-sm font-semibold text-on-surface leading-tight">Muhammad Al-Fatih</p>
+<p class="font-caption text-caption text-on-surface-variant">Aqiqah Anak Laki-laki (2 Ekor)</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="pets">pets</span>
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-on-surface">2 Gibas Jantan</span>
+</div>
+</div>
+<!-- Package Description & Inclusions -->
+<div class="space-y-1.5">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5" data-icon="restaurant_menu">restaurant_menu</span>
+<div class="flex-1">
+<p class="font-title-sm text-title-sm font-semibold text-on-surface">Paket Istimewa Kebuli</p>
+<p class="font-caption text-caption text-on-surface-variant">160 Box Nasi Kebuli + Boneka Maskot + Sertifikat Bingkai Kayu</p>
+</div>
+</div>
+</div>
+<!-- Financial Status Pill -->
+<div class="flex items-center justify-between py-2 px-3 bg-surface-container rounded-lg">
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-outline">Total Tagihan</span>
+<span class="font-label-mono-md text-label-mono-md font-bold text-on-surface">Rp 6.850.000</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-primary text-surface-container-lowest font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+            Lunas BSI VA
+          </span>
+</div>
+<!-- Operational Pipeline Tracker (Step 3 of 7) -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-caption font-caption mb-1.5">
+<span class="font-semibold text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Step 3/7: KITCHEN_COOKED
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant font-medium">Sedang Dimasak (70%)</span>
+</div>
+<!-- Segmented Progress Bar -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
+<div class="bg-primary h-full w-[28%] border-r border-surface-container-lowest" title="Confirmed &amp; Slaughtered"></div>
+<div class="bg-secondary-container h-full w-[42%] relative overflow-hidden" title="Cooking">
+<div class="absolute inset-0 bg-white/20 animate-[pulse_1.5s_infinite]"></div>
+</div>
+<div class="bg-surface-container-high h-full w-[30%]" title="Packing, QC, Dispatch"></div>
+</div>
+<div class="flex justify-between font-label-mono-sm text-[10px] text-outline mt-1">
+<span>RPH Selesai</span>
+<span class="text-secondary font-semibold">Dapur Terbuka</span>
+<span>Packing QC</span>
+<span>POD Armada</span>
+</div>
+</div>
+<!-- Quick Actions Row -->
+<div class="grid grid-cols-3 gap-2 pt-2 border-t border-outline-variant/30">
+<button class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="info">info</span>
+<span class="font-caption text-[11px] font-semibold mt-1">Detail Aqiqah</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary-container text-[20px]" data-icon="videocam">videocam</span>
+<span class="font-caption text-[11px] font-semibold mt-1 text-center leading-tight">Video Doa WA</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="qr_code_2">qr_code_2</span>
+<span class="font-caption text-[11px] font-semibold mt-1 text-center leading-tight">Label Box QR</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Second Order Card: Ibu Dewi Safitri -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden relative">
+<!-- 3px Emerald Top Accent Notch -->
+<div class="h-[3px] w-full bg-primary-container"></div>
+<div class="p-4 flex flex-col gap-3">
+<!-- Header row -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-primary">#ORD-2026-1108-02</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant border border-tertiary/20 font-label-mono-sm text-[10px] font-semibold tracking-wide">
+                SLAUGHTERED
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Ibu Dewi Safitri</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Target: 14:00 WIB</span>
+</div>
+<!-- Detail Bayi & Kambing -->
+<div class="bg-surface-container-low/70 rounded-lg p-2.5 flex items-center justify-between border border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="child_care">child_care</span>
+<div>
+<p class="font-title-sm text-title-sm font-semibold text-on-surface leading-tight">Aisyah Humaira</p>
+<p class="font-caption text-caption text-on-surface-variant">Aqiqah Anak Perempuan (1 Ekor)</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="pets">pets</span>
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-on-surface">1 Domba Betina</span>
+</div>
+</div>
+<!-- Slaughter Protocol Verification Note -->
+<div class="flex items-start gap-2.5 bg-surface-bright p-2.5 rounded-lg border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="verified_user">verified_user</span>
+<div class="flex-1">
+<p class="font-title-sm text-title-sm font-semibold text-tertiary">Penyembelihan Syar'i Selesai</p>
+<p class="font-caption text-caption text-on-surface-variant">Juleha Bersertifikat: <span class="font-semibold text-on-surface">Ust. Syamsul Arifin</span> (07:15 WIB). Video HD ikrar nama bayi siap dikirimkan ke sohibul.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-2 pt-1">
+<button class="flex-1 inline-flex items-center justify-center gap-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container px-3 py-2 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="workspace_premium">workspace_premium</span>
+<span>Sertifikat Halal</span>
+</button>
+<button class="flex-1 inline-flex items-center justify-center gap-1.5 bg-primary-container text-surface-container-lowest hover:bg-tertiary px-3 py-2 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+<span>Chat WA</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Third Order Card: Bpk. Hendra Gunawan -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden relative">
+<!-- 3px Muted Slate Top Accent Notch -->
+<div class="h-[3px] w-full bg-outline"></div>
+<div class="p-4 flex flex-col gap-3">
+<!-- Header row -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-primary">#ORD-2026-1108-03</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-mono-sm text-[10px] font-semibold tracking-wide border border-primary/20">
+                CONFIRMED
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Bpk. Hendra Gunawan</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Target: 16:30 WIB</span>
+</div>
+<!-- Detail Info & RPH Scheduled Queue -->
+<div class="flex items-center justify-between bg-surface-container-low/70 rounded-lg p-2.5 border border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="schedule">schedule</span>
+<div>
+<p class="font-title-sm text-title-sm font-semibold text-on-surface">Menunggu Jadwal RPH</p>
+<p class="font-caption text-caption text-on-surface-variant">Slot Penyembelihan: 09:30 WIB (Kandang C-04)</p>
+</div>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-primary font-caption text-caption font-semibold active:scale-95 transition-transform hover:bg-surface-container">
+<span class="material-symbols-outlined text-[16px]" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span>Intake RPH</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Docked Semantic Shell from Shared Components JSON) -->
+<!-- style_shell_layout: "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest dark:bg-inverse-surface" -->
+<!-- Note: Active tab logic strictly maps to 'Pesanan' based on prompt intent -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest shadow-md">
+<!-- Tab 1: Dasbor (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform" href="#dasbor">
+<span class="material-symbols-outlined text-[22px]" data-icon="dashboard">dashboard</span>
+<span class="mt-0.5">Dasbor</span>
+</a>
+<!-- Tab 2: Pesanan (ACTIVE - mapped directly to current screen) -->
+<!-- style_active_navigation: "flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed dark:text-on-primary-fixed rounded-lg px-space-md py-space-xs font-caption text-caption" -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-space-md py-space-xs font-caption text-caption active:scale-95 transition-transform shadow-sm" href="#pesanan">
+<span class="material-symbols-outlined text-[22px] text-surface-container-lowest" data-icon="receipt_long">receipt_long</span>
+<span class="mt-0.5 font-bold text-surface-container-lowest">Pesanan</span>
+</a>
+<!-- Tab 3: RPH Syar'i (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform" href="#rph">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified">verified</span>
+<span class="mt-0.5">RPH Syar'i</span>
+</a>
+<!-- Tab 4: Kurir POD (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform" href="#kurir">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_shipping">local_shipping</span>
+<span class="mt-0.5">Kurir POD</span>
+</a>
+</nav>
+</body></html>

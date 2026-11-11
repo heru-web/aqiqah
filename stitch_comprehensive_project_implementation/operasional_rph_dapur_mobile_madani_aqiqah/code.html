@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madani Aqiqah ERP - Operasional RPH &amp; Dapur Masak Mobile</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#6f7973",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a6f2d1",
+            "inverse-primary": "#8bd6b6",
+            "inverse-surface": "#283044",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#1b6b51",
+            "outline-variant": "#bec9c2",
+            "secondary": "#904d00",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-surface-variant": "#3f4944",
+            "on-secondary-container": "#663500",
+            "on-tertiary-fixed-variant": "#00513a",
+            "tertiary": "#004530",
+            "on-primary-container": "#8bd6b7",
+            "on-tertiary-fixed": "#002115",
+            "surface-container-low": "#f2f3ff",
+            "surface": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#fe932c",
+            "on-primary-fixed-variant": "#00513b",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#005f44",
+            "on-primary-fixed": "#002116",
+            "primary-fixed-dim": "#8bd6b6",
+            "tertiary-fixed": "#97f5cc",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2f1500",
+            "on-secondary-fixed-variant": "#6e3900",
+            "primary-container": "#065f46",
+            "secondary-fixed": "#ffdcc3",
+            "surface-bright": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#7cd9b1",
+            "on-surface": "#131b2e",
+            "primary": "#004532"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "caption": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "label-mono-sm": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "label-mono-md": ["JetBrains Mono"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-mono-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md min-h-screen pb-24 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Shared Component: TopAppBar (Strict JSON Match & Rules) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 flex items-center justify-between px-space-md py-space-sm bg-surface-container-lowest dark:bg-inverse-surface shadow-sm dark:shadow-none">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu Hub" class="p-1 rounded-lg text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed tracking-tight">Madani Aqiqah Ops</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">RPH-PROD-V4.2</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-lg border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold">ONLINE SYNC</span>
+</div>
+<button aria-label="Refresh Data" class="p-1 rounded-lg text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas for Field Slaughterhouse Operator (Juleha) & Kitchen Head -->
+<main class="w-full max-w-md mx-auto pt-16 px-space-md space-y-4">
+<!-- Secondary Operational Header Bar -->
+<div class="pt-2 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Batch Produksi &amp; RPH Syar'i</h1>
+<p class="font-body-sm text-body-sm text-outline">Terminal Operasional Juleha &amp; Dapur Masak</p>
+</div>
+</div>
+<!-- Operational Meta Controls: Badge & Date Selector -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-mono-sm text-label-mono-sm font-semibold tracking-wide border border-primary-container/20">
+            Shift Pagi-Siang
+          </span>
+<span class="font-caption text-caption text-outline">06:00 - 14:30 WIB</span>
+</div>
+<div class="flex items-center gap-1 bg-surface px-2 py-1 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span class="font-label-mono-sm text-label-mono-sm font-semibold text-on-surface">8 Nov 2026</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Shift Summary Banner (Bento Metric Tiles) -->
+<section aria-label="Shift Summary" class="bg-surface-container-lowest rounded-xl p-3 border border-outline-variant relative overflow-hidden shadow-sm">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-title-sm text-title-sm text-on-surface">Ringkasan Shift Hari Ini</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Pembaruan 10 Menit Lalu</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<!-- Metric 1: Slaughter -->
+<div class="bg-surface p-2 rounded-lg border border-outline-variant/60 flex flex-col justify-center items-center">
+<div class="flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary-container">verified</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Sembelih</span>
+</div>
+<span class="font-display-lg text-[26px] leading-7 text-primary font-bold">14</span>
+<span class="font-caption text-caption text-on-surface-variant mt-0.5">Ekor Selesai</span>
+</div>
+<!-- Metric 2: Cooking Batches -->
+<div class="bg-surface p-2 rounded-lg border border-outline-variant/60 flex flex-col justify-center items-center">
+<div class="flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">skillet</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Dapur</span>
+</div>
+<span class="font-display-lg text-[26px] leading-7 text-secondary font-bold">6</span>
+<span class="font-caption text-caption text-on-surface-variant mt-0.5">Batch Dimasak</span>
+</div>
+<!-- Metric 3: QC Ready -->
+<div class="bg-surface p-2 rounded-lg border border-outline-variant/60 flex flex-col justify-center items-center">
+<div class="flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary">fact_check</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">QC Kemasan</span>
+</div>
+<span class="font-display-lg text-[26px] leading-7 text-tertiary-container font-bold">4</span>
+<span class="font-caption text-caption text-on-surface-variant mt-0.5">Batch Siap QC</span>
+</div>
+</div>
+</section>
+<!-- SECTION: Active Operational Tasks -->
+<section class="space-y-3.5">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">task_alt</span>
+          Tugas Aktif Lapangan
+        </h2>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container px-2 py-0.5 rounded text-outline font-semibold">3 ANTREAN</span>
+</div>
+<!-- TASK 1: RPH Syar'i (High Significance Sacred Panel) -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="p-1 rounded bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<div>
+<span class="font-title-sm text-title-sm text-primary">Task 1: RPH Halal Syar'i</span>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">BATCH-SYR-0811-01</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-mono-sm text-label-mono-sm font-semibold tracking-wide border border-primary-container/30">
+            SLAUGHTERED
+          </span>
+</div>
+<!-- Animal Tag & Specs -->
+<div class="bg-surface p-2.5 rounded-lg border border-outline-variant/70 mb-3 space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">sell</span>
+<span class="font-title-sm text-title-sm text-on-surface">Tag Telinga:</span>
+</div>
+<div class="flex gap-1 font-label-mono-md text-label-mono-md">
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-primary font-bold">#DG-204</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-primary font-bold">#DG-205</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Domba Garut Jantan <span class="font-label-mono-sm text-label-mono-sm font-semibold text-on-surface">32.4 kg</span> &amp; <span class="font-label-mono-sm text-label-mono-sm font-semibold text-on-surface">33.1 kg</span>
+</p>
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/40">
+<span class="inline-flex items-center gap-1 font-caption text-caption text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Sehat &amp; Cukup Umur (Musinnah)
+            </span>
+</div>
+</div>
+<!-- Juleha Credentials -->
+<div class="mb-3 space-y-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5">person_celebrate</span>
+<div>
+<span class="font-caption text-caption text-outline block">Juru Sembelih Halal (Juleha):</span>
+<span class="font-title-sm text-title-sm text-on-surface">Ustadz Syamsul Arifin</span>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">Sertifikat BNSP Halal MUI No: 882/LP呃</p>
+</div>
+</div>
+</div>
+<!-- Syariat Execution Status -->
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/80 mb-3 space-y-1">
+<div class="flex items-center gap-1.5 text-primary font-semibold font-title-sm text-title-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>SEMBELIH SELESAI</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Tasmiyah &amp; Doa Sesuai Syariat Shohibul: <strong class="text-primary-container font-semibold">Bpk. Rizky</strong>
+</p>
+<p class="font-caption text-caption text-outline italic">
+            "Bismillahi Allahu Akbar, Allahumma taqabbal min Rizky..."
+          </p>
+</div>
+<!-- Video Proof Cloud Record & WA Action -->
+<div class="border border-outline-variant rounded-lg p-2.5 bg-surface flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold block leading-tight">Video Bukti Syar'i</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Video 1080p Tersimpan di Cloud</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">142 MB</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-primary-container hover:bg-tertiary-container text-on-primary py-2 px-3 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Preview &amp; Kirim WA Shohibul</span>
+</button>
+</div>
+</article>
+<!-- TASK 2: Dapur Olahan Katering (Kitchen Head & QC) -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary-container"></div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="p-1 rounded bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">soup_kitchen</span>
+</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface">Task 2: Dapur Olahan Katering</span>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">KITCHEN-BAT-0811-04</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-mono-sm text-label-mono-sm font-semibold tracking-wide border border-primary-container/30">
+            QC_READY
+          </span>
+</div>
+<!-- Menu Details Card -->
+<div class="bg-surface p-2.5 rounded-lg border border-outline-variant/70 mb-3 space-y-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">restaurant_menu</span>
+<div class="flex-1">
+<span class="font-caption text-caption text-outline block">Komposisi Menu Olahan:</span>
+<p class="font-title-sm text-title-sm text-on-surface">
+                Sate Madani <span class="text-secondary font-semibold font-label-mono-sm text-label-mono-sm">(400 Tusuk Bakar)</span> &amp; Gule Rempah <span class="text-secondary font-semibold font-label-mono-sm text-label-mono-sm">(2 Kuali Besar 45 Liter)</span>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-2 pt-2 border-t border-outline-variant/50">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">rice_bowl</span>
+<div class="flex-1">
+<span class="font-caption text-caption text-outline block">Paket Nasi &amp; Box:</span>
+<p class="font-body-md text-body-md text-on-surface">
+                Nasi Arab Kebuli Beras Basmati <span class="font-label-mono-sm text-label-mono-sm font-semibold text-primary">(160 Box Bento Segel)</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Checklist Quality Control -->
+<div class="mb-3">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-caption text-caption font-semibold text-outline uppercase tracking-wider">Checklist Quality Control</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">3/3 TERPENUHI</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-low rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px] text-primary font-bold">check_box</span>
+<span class="font-body-sm text-body-sm text-on-surface">Uji Rasa &amp; Keempukan Lolos (Head Chef Sign)</span>
+</div>
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-low rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px] text-primary font-bold">check_box</span>
+<span class="font-body-sm text-body-sm text-on-surface">Kemasan Higienis Kedap Udara (Thermobox Seal)</span>
+</div>
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-low rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px] text-primary font-bold">check_box</span>
+<span class="font-body-sm text-body-sm text-on-surface">Stiker Nama Anak <strong class="text-primary font-semibold">'Muhammad Al-Fatih'</strong> tertempel rapi</span>
+</div>
+</div>
+</div>
+<!-- Status Sign-off Bar -->
+<div class="p-2.5 rounded-lg bg-surface-container border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<span class="font-title-sm text-title-sm text-primary block leading-tight">QC PASS</span>
+<span class="font-caption text-caption text-outline">Siap Masuk Jalur Packing &amp; Dispatch</span>
+</div>
+</div>
+<button class="bg-surface-container-lowest hover:bg-surface border border-outline-variant text-on-surface px-2.5 py-1.5 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform duration-150" type="button">
+            Kunci &amp; Oper POD
+          </button>
+</div>
+</article>
+<!-- TASK 3: Live Streaming Sembelih Request -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="p-1 rounded bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">podium</span>
+</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface">Task 3: Live Streaming Sembelih</span>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">REQUEST KHUSUS SHOHIBUL</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-mono-sm text-label-mono-sm font-semibold tracking-wide border border-secondary/20 animate-pulse">
+            LIVE SCHEDULED
+          </span>
+</div>
+<div class="bg-surface p-3 rounded-lg border border-outline-variant/70 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+<span class="font-title-sm text-title-sm text-on-surface">Jadwal: 15:00 WIB</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline bg-surface-container px-2 py-0.5 rounded">Hari Ini</span>
+</div>
+<div class="flex items-start gap-2 pt-1 border-t border-outline-variant/40">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5">contacts</span>
+<div class="flex-1">
+<span class="font-caption text-caption text-outline block">Kanal Video &amp; Kontak:</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface block">Shohibul: Bpk. Hendra Gunawan</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-semibold">Tautan: Zoom Meeting &amp; Standby WA Video Call</span>
+</div>
+</div>
+</div>
+<!-- Action Grid for Juleha Broadcast -->
+<div class="grid grid-cols-2 gap-2 mt-3">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-variant text-on-surface py-2 px-2 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform duration-150 border border-outline-variant" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">call</span>
+<span>Uji Sinyal WA</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 bg-primary-container hover:bg-tertiary-container text-on-primary py-2 px-2 rounded-lg font-title-sm text-title-sm active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span>Mulai Siaran (15:00)</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Operational Note & Compliance Footer Badge -->
+<div class="py-2 flex items-center justify-center gap-2 text-center text-outline">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span class="font-label-mono-sm text-label-mono-sm">SOP Syariah MUI No. 12/2009 &amp; ISO 22000 Halal Kitchen</span>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar (Strict JSON Match & Rules) -->
+<!-- Active Tab: "RPH Syar'i" (maps to field slaughterhouse & kitchen focus) -->
+<nav aria-label="Navigasi Utama" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest dark:bg-inverse-surface shadow-md dark:shadow-none">
+<!-- Item 0: Dasbor (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high dark:hover:bg-surface-variant hover:text-primary dark:hover:text-inverse-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span>Dasbor</span>
+</button>
+<!-- Item 1: Pesanan (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high dark:hover:bg-surface-variant hover:text-primary dark:hover:text-inverse-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span>Pesanan</span>
+</button>
+<!-- Item 2: RPH Syar'i (ACTIVE - Exact Match from JSON) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed dark:text-on-primary-fixed rounded-lg px-space-md py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-semibold text-on-primary">RPH Syar'i</span>
+</button>
+<!-- Item 3: Kurir POD (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high dark:hover:bg-surface-variant hover:text-primary dark:hover:text-inverse-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+<span>Kurir POD</span>
+</button>
+</nav>
+</body></html>

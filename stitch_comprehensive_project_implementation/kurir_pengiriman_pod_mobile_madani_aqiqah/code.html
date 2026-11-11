@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madani Aqiqah ERP - Kurir Pengiriman &amp; Bukti Serah Terima (POD)</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#6f7973",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a6f2d1",
+            "inverse-primary": "#8bd6b6",
+            "inverse-surface": "#283044",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#1b6b51",
+            "outline-variant": "#bec9c2",
+            "secondary": "#904d00",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-surface-variant": "#3f4944",
+            "on-secondary-container": "#663500",
+            "on-tertiary-fixed-variant": "#00513a",
+            "tertiary": "#004530",
+            "on-primary-container": "#8bd6b7",
+            "on-tertiary-fixed": "#002115",
+            "surface-container-low": "#f2f3ff",
+            "surface": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#fe932c",
+            "on-primary-fixed-variant": "#00513b",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#005f44",
+            "on-primary-fixed": "#002116",
+            "primary-fixed-dim": "#8bd6b6",
+            "tertiary-fixed": "#97f5cc",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2f1500",
+            "on-secondary-fixed-variant": "#6e3900",
+            "primary-container": "#065f46",
+            "secondary-fixed": "#ffdcc3",
+            "surface-bright": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#7cd9b1",
+            "on-surface": "#131b2e",
+            "primary": "#004532"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "caption": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "label-mono-sm": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "label-mono-md": ["JetBrains Mono"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-mono-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased pb-28 pt-16 min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Component (from JSON specification) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 flex items-center justify-between px-space-md py-space-sm bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Menu Hub" class="flex items-center justify-center p-1 rounded-lg text-primary hover:bg-surface-container-low active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">Madani Aqiqah Ops</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">POD FIELD TERMINAL v2.4</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">GPS LIVE</span>
+</div>
+<button aria-label="Sync Data" class="flex items-center justify-center p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+</div>
+</header>
+<!-- Mobile Viewport Canvas Container -->
+<main class="max-w-md mx-auto px-space-md pt-3 space-y-4">
+<!-- Dispatch & Driver Identification Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="local_shipping" data-weight="fill">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-title-md text-title-md text-on-surface">Mas Dimas</h1>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-surface-variant text-primary font-semibold">KURIR #KD-04</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="ac_unit">ac_unit</span>
+            Armada Mobil Pendingin A • Online GPS
+          </p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">TARGET HARI INI</span>
+<span class="font-title-sm text-title-sm text-primary">12 TITIK ANTAR</span>
+</div>
+</div>
+<!-- Daily Delivery Performance KPI Pill Cluster -->
+<div class="bg-surface-container-low rounded-xl p-3 border border-outline-variant grid grid-cols-3 gap-2 text-center">
+<div class="border-r border-outline-variant pr-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">Rute Hari Ini</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">12 Titik</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary block mt-0.5">4 Rampung</span>
+</div>
+<div class="border-r border-outline-variant px-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">SLA On-Time</span>
+<span class="font-title-md text-title-md text-primary font-bold">100%</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block mt-0.5">Nol Terlambat</span>
+</div>
+<div class="pl-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">Rata-rata Tiba</span>
+<span class="font-title-md text-title-md text-secondary font-bold">-18 Mnt</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline-variant text-[10px] block mt-0.5">Sebelum Acara</span>
+</div>
+</div>
+<!-- SECTION: Active High Priority Delivery Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant relative overflow-hidden">
+<!-- High-significance sacred top rim notch -->
+<div class="h-1.5 w-full bg-primary-container"></div>
+<div class="p-4 space-y-3.5">
+<!-- Top Status Banner -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-primary-container text-white font-semibold">
+              ANTARAN #DLV-0801
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+              Tersisa ~15 Mnt
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">PRIORITAS TASYAKURAN</span>
+</div>
+<!-- Recipient & Order Metadata -->
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">#ORD-2026-1108-01 • PAKET 2 KAMBING JANTAN</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight mt-0.5">
+            Kel. Bpk. Rizky Ramadhan
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-1 font-medium">
+<span class="material-symbols-outlined text-base text-primary" data-icon="church">mosque</span>
+            Tasyakuran Aqiqah: Ananda Maryam Ramadhani
+          </p>
+</div>
+<!-- Destination Address Box -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0" data-icon="location_on" data-weight="fill">location_on</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Jl. Rawamangun Muka No. 12, Jakarta Timur</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Patokan: Samping Masjid Al-Falah (Pagar Kayu Coklat, Tenda Putih Hijau)
+              </p>
+<div class="flex items-center gap-3 mt-2 text-primary font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="alarm">alarm</span>
+                  Est. Tiba: <strong>10:30 WIB</strong>
+</span>
+<span class="text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="inventory_2">inventory_2</span>
+                  120 Box Nasi + Gulai
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Field Communication Actions -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<a class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-transform duration-150 font-title-sm text-title-sm shadow-sm" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="near_me">near_me</span>
+            Buka Google Maps
+          </a>
+<a class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-transform duration-150 font-title-sm text-title-sm shadow-sm" href="tel:+628123456789">
+<span class="material-symbols-outlined text-lg text-tertiary-container" data-icon="phone_in_talk">phone_in_talk</span>
+            Telepon / WA
+          </a>
+</div>
+</div>
+</section>
+<!-- SECTION: Proof of Delivery (POD) Operational Form -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xl" data-icon="fact_check">fact_check</span>
+            Bukti Serah Terima (POD)
+          </h3>
+<p class="font-body-sm text-body-sm text-outline">Lengkapi 4 parameter verifikasi standar syariah &amp; mutu.</p>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant">4 Wajib</span>
+</div>
+<!-- Step 1: Camera Photo Documentation with GPS Geotag -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold">1</span>
+            Foto Serah Terima Shohibul Aqiqah
+          </label>
+<span class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="gps_fixed">gps_fixed</span>
+            GPS Terkunci
+          </span>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-3 bg-surface-container-low flex flex-col items-center justify-center gap-2 text-center relative overflow-hidden">
+<div class="w-full h-36 bg-surface-container rounded-lg overflow-hidden relative flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A delivery courier dressed in a clean emerald green uniform holding an insulated catering box hand-in-hand with an Indonesian family host in modest attire outside a Jakarta home. Soft morning daylight illuminates the porch, with a clean warm aesthetic, sharp focus on documentary authenticity and Islamic aqiqah culinary professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArR24gALuDiJf-Y9uZwlrZVlXaEfmaVpvrpcfd1ZtplZKqDZ8evN1S-FqenRV3orXYWtZZe5cq4gX9HYxMAXSqZgVssVCkqqFcTqCfNT_Mz_x63BzPcBx36GMZYa5cI7Ivf4CCo4Eybh4gTn8r3pHVSuXS-tyjIm9JF8PKBr6Cu9AkApEfrIHHEhfRisCag5FOOs8W-CkY68BINFxSiXO-lR7EUNK8y22adgQ2V29e"/>
+<!-- Geotag & Timestamp Overlay Watermark -->
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 text-inverse-on-surface rounded p-1.5 text-left backdrop-blur-sm">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-[10px]">
+<span>LAT: -6.1954° S | LONG: 106.8821° E</span>
+<span class="text-primary-fixed">VERIFIED</span>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-[10px] text-outline-variant">
+                10:14:28 WIB • Jl. Rawamangun Muka No. 12
+              </div>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-title-sm text-title-sm hover:bg-surface-container flex items-center justify-center gap-1.5 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="photo_camera">photo_camera</span>
+            Ambil Ulang Foto Geotag
+          </button>
+</div>
+</div>
+<!-- Step 2: Thermal Box Temperature QA Verification -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5" for="temp-input">
+<span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold">2</span>
+            Suhu Thermal Box Makanan
+          </label>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-semibold">Min. 60°C Higienis</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-xl" data-icon="device_thermostat">device_thermostat</span>
+<input class="w-full pl-10 pr-12 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-label-mono-md text-label-mono-md text-on-surface font-bold focus:border-primary-container focus:ring-2 focus:ring-primary-container/20" id="temp-input" type="text" value="64.5"/>
+<span class="absolute right-3 top-2.5 font-label-mono-sm text-label-mono-sm text-outline font-bold">°C</span>
+</div>
+<div class="px-3 py-2 bg-surface-variant rounded-lg border border-outline-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">OPTIMAL</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Digital e-Signature Pad for Family Representative -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold">3</span>
+            Tanda Tangan Digital Penerima
+          </label>
+<button class="font-label-mono-sm text-label-mono-sm text-secondary hover:underline" type="button">Hapus / Reset</button>
+</div>
+<div class="h-28 border border-outline-variant bg-surface-container-lowest rounded-lg relative flex flex-col justify-between p-2.5">
+<!-- Stylized Mock Digital Signature Trace -->
+<div class="h-full w-full flex items-center justify-center">
+<svg class="w-48 h-16 text-primary stroke-current fill-none stroke-[2.5]" viewbox="0 0 200 60">
+<path d="M 15 45 Q 40 10 55 35 T 90 20 T 130 50 Q 155 15 185 30" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M 50 40 L 160 42" stroke-linecap="round"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/60 pt-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Bpk. H. Faisal (Wakil Shohibul)</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="draw">draw</span>
+              Tersimpan
+            </span>
+</div>
+</div>
+</div>
+<!-- Step 4: Final QA Checklists (Seals & Certificates) -->
+<div class="space-y-2.5 pt-1">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold">4</span>
+          Pemeriksaan Syariah &amp; Fisik Lapangan
+        </label>
+<div class="space-y-2 bg-surface-container-low p-2.5 rounded-lg border border-outline-variant">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Segel Barcode Higienis Utuh:</strong> 12 Box Thermal &amp; Kontainer Gulai tidak rusak/terbuka.
+            </span>
+</label>
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Sertifikat Syariah Fisik Diterima:</strong> Akta Penyembelihan &amp; Video Dokumentasi Halal diserahkan.
+            </span>
+</label>
+</div>
+</div>
+<!-- Primary Finish Action Button -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-4 bg-primary-container hover:bg-tertiary-container active:scale-95 text-white font-title-md text-title-md rounded-xl flex items-center justify-center gap-2 shadow-md transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="send">send</span>
+          Konfirmasi Selesai &amp; Kirim WA Tiba Otomatis
+        </button>
+<p class="font-label-mono-sm text-label-mono-sm text-center text-outline mt-1.5">
+          Notifikasi WhatsApp &amp; e-Sertifikat otomatis terkirim ke nomor Shohibul.
+        </p>
+</div>
+</section>
+<!-- SECTION: Upcoming Delivery Queue (Antaran Selanjutnya) -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="format_list_bulleted">format_list_bulleted</span>
+          Antaran Selanjutnya (Queue)
+        </h3>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">URUTAN RUTE GPS</span>
+</div>
+<div class="space-y-2">
+<!-- Antaran 2 (Next in Queue) -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-variant flex items-center justify-center text-primary font-bold font-label-mono-md">
+              02
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface">Ibu Sarah Fauziah</h4>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-semibold">11:00 WIB</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tebet Barat, Jakarta Selatan (60 Box)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Antaran 3 (Completed Previously) -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant flex items-center justify-between opacity-85">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface line-through text-outline">Bpk. H. Faisal</h4>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-variant text-primary font-semibold">DELIVERED</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Kalimalang, Jaktim • Selesai 09:15 WIB</p>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-medium">POD Tersimpan</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Component (from JSON specification: label_icon, destination_count 4, active 'Kurir POD') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest shadow-md">
+<!-- Item 1: Dasbor -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dasbor</span>
+</a>
+<!-- Item 2: Pesanan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Pesanan</span>
+</a>
+<!-- Item 3: RPH Syar'i -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-caption text-caption hover:bg-surface-container-high hover:text-primary active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span>RPH Syar'i</span>
+</a>
+<!-- Item 4: Kurir POD (ACTIVE STATE based on JSON & semantic context) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-space-md py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping" data-weight="fill">local_shipping</span>
+<span>Kurir POD</span>
+</a>
+</nav>
+</body></html>

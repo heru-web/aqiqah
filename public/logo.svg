@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7CB342"/>
+      <stop offset="100%" stop-color="#33691E"/>
+    </linearGradient>
+    <radialGradient id="heartGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EF5350"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </radialGradient>
+  </defs>
+  <!-- Outer green ring -->
+  <circle cx="32" cy="32" r="30" fill="url(#ringGrad)"/>
+  <circle cx="32" cy="32" r="27" fill="url(#ringGrad)" opacity="0.35"/>
+  <!-- Inner white field -->
+  <circle cx="32" cy="32" r="22" fill="#ffffff"/>
+  <!-- Red heart-shaped M -->
+  <path d="M20 38 C20 30 26 22 32 26 C38 22 44 30 44 38 L44 46 L32 34 L20 46 Z" fill="url(#heartGrad)"/>
+  <!-- Green leaves above -->
+  <path d="M26 16 C24 12 20 14 22 18 C24 16 26 14 28 16 Z" fill="#689F38"/>
+  <path d="M38 16 C40 12 44 14 42 18 C40 16 38 14 36 16 Z" fill="#689F38"/>
+</svg>
