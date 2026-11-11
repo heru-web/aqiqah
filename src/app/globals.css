@@ -1,0 +1,479 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================================
+   DESIGN TOKENS — madani-aqiqah-design (sage + cream)
+   Palet mengikuti demo super-app: kanvas sage, permukaan putih glass,
+   primary hijau tua, aksen gold/warn amber, status ok/destructive.
+   ========================================================================= */
+
+:root {
+  /* ==========================================================
+     PALET CLEAN — Jurnal Guru (guru.cintabuku.site)
+     Teal #0D7C66 / navy #1A2332 / off-white #FCFBF8 /
+     krem #E8E4DC / amber #E8A317. Card putih, soft & clean.
+     ========================================================== */
+  --canvas: #fcfbf8;
+  --surface: #ffffff;
+  --surface-dim: #faf9f6;
+  --surface-raised: #ffffff;
+  --line: #e8e4dc;
+
+  --primary: #0d7c66;
+  --primary-gradient: linear-gradient(110deg, #0d7c66 0%, #0a6352 100%);
+  --primary-strong: #0a6352;
+  --primary-foreground: #ffffff;
+  --primary-container: #0d7c66;
+  --on-primary-container: #ffffff;
+  --primary-fixed: #d6ece4;
+  --primary-fixed-dim: #bde0d4;
+
+  --secondary: #1a2332;
+  --secondary-foreground: #fcfbf8;
+  --card: #ffffff;
+  --button: var(--primary);
+  --accent: #0d7c66;
+  --accent-foreground: #ffffff;
+  --gradient-edit: linear-gradient(110deg, #397a91 0%, #559eb1 100%);
+  --gradient-success: linear-gradient(110deg, #31835d 0%, #4fa37b 100%);
+  --gradient-warning: linear-gradient(110deg, #bd8130 0%, #d9a04a 100%);
+  --gradient-danger: linear-gradient(110deg, #bc4c31 0%, #d76a52 100%);
+  --gradient-detail: linear-gradient(110deg, #475569 0%, #64748b 100%);
+
+  --gold: #e8a317;
+  --gold-strong: #ca8a04;
+  --gold-foreground: #1a2332;
+  --gold-container: #f8ead0;
+  --on-gold-container: #7a5410;
+  --gold-soft: rgb(232 163 23 / 16%);
+  --gold-soft-foreground: #8a5e14;
+
+  --foreground: #2d3748;
+  --muted: #f5f3ef;
+  --muted-foreground: #64748b;
+  --border: #e8e4dc;
+  --input: #e8e4dc;
+  --ring: #0d7c66;
+
+  --success: #31835d;
+  --success-soft: rgb(49 131 93 / 15%);
+  --success-soft-foreground: #275d47;
+  --warning: #bd8130;
+  --warning-soft: rgb(189 129 48 / 15%);
+  --warning-soft-foreground: #7a4e1f;
+  --danger: #bc4c31;
+  --danger-soft: rgb(188 76 49 / 13%);
+  --danger-soft-foreground: #8f3a24;
+  --info: #39678f;
+  --info-soft: rgb(57 103 143 / 13%);
+  --info-soft-foreground: #2c5d70;
+  --detail: #475569;
+  --detail-foreground: #ffffff;
+  --detail-soft: rgb(71 85 105 / 13%);
+  --detail-soft-foreground: #334155;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+
+  /* Navigasi & tabel — teal sidebar meniru Jurnal Guru */
+  --nav: #225349;
+  --nav-soft: #2c7264;
+  --nav-active: #328f7d;
+  --nav-text: #b6d8cf;
+  --nav-text-strong: #f4fbf8;
+  --nav-line: rgb(255 255 255 / 12%);
+
+  --sidebar: var(--nav);
+  --sidebar-foreground: var(--nav-text-strong);
+  --sidebar-primary: var(--nav-active);
+  --sidebar-primary-foreground: #f4fbf8;
+  --sidebar-accent: var(--nav-soft);
+  --sidebar-accent-foreground: var(--nav-text-strong);
+  --sidebar-border: var(--nav-line);
+  --sidebar-ring: var(--ring);
+  --brand-from: #0d7c66;
+  --brand-to: #0a6352;
+  --table-head: #1a2332;
+  --table-head-fg: #e2e8f0;
+  --table-stripe: #faf9f6;
+  --table-hover: #f8f6f2;
+  --line-warm: #e8e4dc;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-detail: var(--detail);
+  --color-detail-foreground: var(--detail-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+
+  --color-gold: var(--gold);
+  --color-gold-strong: var(--gold-strong);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-gold-container: var(--gold-container);
+  --color-on-gold-container: var(--on-gold-container);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-soft-foreground: var(--gold-soft-foreground);
+
+  --color-background: var(--canvas);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-soft-foreground: var(--success-soft-foreground);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-soft-foreground: var(--warning-soft-foreground);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-soft-foreground: var(--danger-soft-foreground);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-info-soft-foreground: var(--info-soft-foreground);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: 9999px;
+
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-outfit);
+  --font-data: var(--font-jetbrains-mono);
+
+  --color-nav: var(--nav);
+  --color-nav-soft: var(--nav-soft);
+  --color-nav-active: var(--nav-active);
+  --color-nav-text: var(--nav-text);
+  --color-nav-text-strong: var(--nav-text-strong);
+  --color-brand-from: var(--brand-from);
+  --color-brand-to: var(--brand-to);
+  --color-table-head: var(--table-head);
+  --color-table-head-fg: var(--table-head-fg);
+  --color-table-stripe: var(--table-stripe);
+  --color-table-hover: var(--table-hover);
+  --color-line-warm: var(--line-warm);
+
+  --color-sidebar: var(--nav);
+  --color-sidebar-foreground: var(--nav-text-strong);
+  --color-sidebar-primary: var(--nav-active);
+  --color-sidebar-primary-foreground: var(--nav-text-strong);
+  --color-sidebar-accent: var(--nav-soft);
+  --color-sidebar-accent-foreground: var(--nav-text-strong);
+  --color-sidebar-border: var(--nav-line);
+  --color-sidebar-ring: var(--ring);
+
+  --shadow-card: 0 1px 2px 0 oklch(27% 0.025 165 / 0.04);
+  --shadow-popover: 0 10px 24px -6px oklch(27% 0.025 165 / 0.12);
+  --shadow-modal: 0 24px 48px -12px oklch(27% 0.025 165 / 0.18);
+}
+
+/* Skala tipografi konten — ringkas & estetik (isi 13-14px, judul 18-20px).
+   denser seperti Jurnal Guru: tabel 13px, label 12px, heading Outfit. */
+@theme {
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.125rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.375rem;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.375rem;
+  --text-lg: 1rem;
+  --text-lg--line-height: 1.5rem;
+  --text-xl: 1.125rem;
+  --text-xl--line-height: 1.625rem;
+  --text-2xl: 1.25rem;
+  --text-2xl--line-height: 1.75rem;
+  --text-3xl: 1.5rem;
+  --text-3xl--line-height: 2rem;
+  --text-4xl: 1.875rem;
+  --text-4xl--line-height: 2.25rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--foreground);
+    font-family: var(--font-dm-sans);
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+    font-feature-settings: "cv05" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-outfit);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1rem; /* 16px */
+  }
+  h3 {
+    font-size: 0.9375rem; /* 15px */
+  }
+  h4 {
+    font-size: 0.875rem; /* 14px */
+  }
+  h5,
+  h6 {
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+
+@layer components {
+  /* Kartu putih dengan garis hangat — lembut, tanpa efek kaca. */
+  .glass-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    box-shadow: 0 1px 2px oklch(27% 0.02 50 / 0.05);
+  }
+
+  /* Chip status: pill kecil uppercase khas demo. */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+@layer utilities {
+  /* Gradien tombol per fungsi — arah konsisten 110deg, dua warna */
+  .bg-brand-gradient {
+    background-image: var(--primary-gradient);
+  }
+  .bg-edit-gradient {
+    background-image: var(--gradient-edit);
+  }
+  .bg-confirm-gradient {
+    background-image: var(--gradient-success);
+  }
+  .bg-warning-gradient {
+    background-image: var(--gradient-warning);
+  }
+  .bg-danger-gradient {
+    background-image: var(--gradient-danger);
+  }
+  .bg-detail-gradient {
+    background-image: var(--gradient-detail);
+  }
+
+  /* Menu sidebar aktif — indikator batang cyan di tepi kiri item */
+  .sidebar-menu {
+    position: relative;
+  }
+
+  .sidebar-menu.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: #20c5f5;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .sidebar-menu.active {
+    background-image: var(--primary-gradient);
+    color: var(--nav-text-strong);
+  }
+
+  .font-data {
+    font-family: var(--font-jetbrains-mono);
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-headline-lg {
+    font-family: var(--font-outfit);
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  .font-headline-md {
+    font-family: var(--font-outfit);
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .font-headline-sm {
+    font-family: var(--font-outfit);
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+
+  .font-label-sm {
+    font-family: var(--font-dm-sans);
+    font-size: 10.5px;
+    line-height: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+/* Scrollbar ringkas (opsional) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--line) 18%, transparent);
+  border-radius: 9999px;
+  border: 2px solid var(--canvas);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Sidebar scroll menyatu dengan warna sidebar (hampir tak terlihat) */
+[data-slot="sidebar-content"] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nav) transparent;
+}
+[data-slot="sidebar-content"]::-webkit-scrollbar {
+  width: 8px;
+}
+[data-slot="sidebar-content"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-slot="sidebar-content"]::-webkit-scrollbar-thumb {
+  background: var(--nav);
+  border: 2px solid var(--nav);
+  border-radius: 9999px;
+}
+[data-slot="sidebar-content"]:hover::-webkit-scrollbar-thumb {
+  background: var(--nav-soft);
+}
+
+/* ============================================================================
+   HORIZONTAL SCROLL INDICATORS — aesthetic & accessible
+   ========================================================================= */
+
+/* Custom horizontal scrollbar — subtle but visible */
+.scroll-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-x-auto::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+  margin: 0 8px;
+}
+.scroll-x-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 100%);
+  border-radius: 4px;
+  border: 2px solid var(--muted);
+  transition: opacity 0.2s ease;
+}
+.scroll-x-auto::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+.scroll-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--muted);
+}
+
+/* Scroll position indicator dots (optional, for boards) */
+.scroll-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 8px 0;
+}
+.scroll-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: all 0.2s ease;
+}
+.scroll-dots .dot.active {
+  background: var(--primary);
+  transform: scale(1.3);
+}
+
+/* ============================================================================
+   BOARD-SPECIFIC: DealBoard horizontal scroll enhancement
+   ========================================================================= */
+
+.crm-board-wrapper {
+  position: relative;
+}
+.crm-board-wrapper .scroll-x-auto {
+  padding-bottom: 16px; /* space for scrollbar */
+  margin-bottom: -16px; /* negative margin to keep layout tight */
+}
+
+/* Smooth scroll behavior */
+.crm-board-wrapper .scroll-x-auto {
+  scroll-behavior: smooth;
+}
+
+/* Board mengelola scroll sendiri — jangan diteruskan ke halaman */
+.crm-board-wrapper .scroll-x-auto {
+  overscroll-behavior-x: contain;
+}
+
+/* Focus visible for keyboard navigation */
+.crm-board-wrapper .scroll-x-auto:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}

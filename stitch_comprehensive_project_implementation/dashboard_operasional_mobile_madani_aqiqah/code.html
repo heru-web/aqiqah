@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madani Aqiqah ERP - Dashboard Mobile Operasional</title>
+<!-- Google Fonts: Hanken Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#6f7973",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a6f2d1",
+            "inverse-primary": "#8bd6b6",
+            "inverse-surface": "#283044",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#1b6b51",
+            "outline-variant": "#bec9c2",
+            "secondary": "#904d00",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-surface-variant": "#3f4944",
+            "on-secondary-container": "#663500",
+            "on-tertiary-fixed-variant": "#00513a",
+            "tertiary": "#004530",
+            "on-primary-container": "#8bd6b7",
+            "on-tertiary-fixed": "#002115",
+            "surface-container-low": "#f2f3ff",
+            "surface": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#fe932c",
+            "on-primary-fixed-variant": "#00513b",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#005f44",
+            "on-primary-fixed": "#002116",
+            "primary-fixed-dim": "#8bd6b6",
+            "tertiary-fixed": "#97f5cc",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2f1500",
+            "on-secondary-fixed-variant": "#6e3900",
+            "primary-container": "#065f46",
+            "secondary-fixed": "#ffdcc3",
+            "surface-bright": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#7cd9b1",
+            "on-surface": "#131b2e",
+            "primary": "#004532"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "caption": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "label-mono-sm": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "label-mono-md": ["JetBrains Mono"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-mono-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased pb-28 min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top App Bar (Docked Top - Strict Shared Components JSON execution) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 flex items-center justify-between px-space-md py-space-sm bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-inner">
+<span class="material-symbols-outlined text-[20px]" data-icon="hub">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">Madani Aqiqah Ops</span>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="bg-primary/10 text-primary font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded font-semibold border border-primary/20">Cabang Jaktim - Live</span>
+<span class="text-outline font-label-mono-sm text-label-mono-sm">#OPS-04</span>
+</div>
+</div>
+</div>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-1.5">
+<button aria-label="Notifikasi Operasional" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-label-mono-sm text-[9px] font-bold ring-2 ring-surface-container-lowest">
+          3
+        </span>
+</button>
+<button aria-label="Sync Realtime Data" class="p-2 rounded-lg text-primary hover:bg-surface-container-low transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[22px]" data-icon="sync">sync</span>
+</button>
+</div>
+</header>
+<!-- Main Operasional Content Canvas (Mobile Viewport) -->
+<main class="max-w-md mx-auto pt-20 px-space-md space-y-4">
+<!-- Operational Status Bar Notice -->
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-2 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="event_available">event_available</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Kamis, 15 Syawwal 1447H</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">14:28:10 WIB</span>
+</div>
+</div>
+<!-- Quick KPI Cards (2x2 Grid with Indicator Notches) -->
+<section aria-labelledby="kpi-section-title">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold tracking-tight" id="kpi-section-title">Metrik Produksi Hari Ini</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="verified_user">verified_user</span> RPH &amp; Dapur Live
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- KPI 1: Omzet Bulan Ini -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-primary"></div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Omzet Bulan Ini</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="payments">payments</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight tracking-tight">Rp 248.5M</div>
+</div>
+<div class="mt-2.5 flex items-center gap-1 pt-1.5 border-t border-slate-100">
+<span class="inline-flex items-center text-primary font-label-mono-sm text-label-mono-sm font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>+14.2%
+            </span>
+<span class="font-caption text-caption text-slate-400">vs bln lalu</span>
+</div>
+</div>
+<!-- KPI 2: Pesanan Hari Ini -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Pesanan Hari-H</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="restaurant">restaurant</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">12</span>
+<span class="font-caption text-caption text-on-surface-variant font-semibold">Paket Aqiqah</span>
+</div>
+</div>
+<div class="mt-2 text-slate-500 font-label-mono-sm text-[10px] space-y-0.5 pt-1 border-t border-slate-100">
+<div class="flex justify-between">
+<span>Siap Kirim: <strong class="text-primary font-bold">8</strong></span>
+<span>Masak: <strong class="text-amber-700 font-bold">3</strong></span>
+</div>
+<div class="text-right">
+<span>Selesai: <strong class="text-slate-600 font-bold">1</strong></span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Hewan Disembelih -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-primary-container"></div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Sembelih Syar'i</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="verified">verified</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">14</span>
+<span class="font-caption text-caption text-on-surface-variant font-semibold">Ekor Domba</span>
+</div>
+</div>
+<div class="mt-2.5 pt-1.5 border-t border-slate-100">
+<span class="inline-flex items-center gap-1 bg-emerald-50 text-primary border border-primary/20 px-1.5 py-0.5 rounded font-label-mono-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span> Terverifikasi MUI
+            </span>
+</div>
+</div>
+<!-- KPI 4: Armada Bertugas -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-slate-700"></div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Armada POD</span>
+<span class="material-symbols-outlined text-[16px] text-slate-700" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">4</span>
+<span class="font-caption text-caption text-on-surface-variant font-semibold">Kurir Aktif</span>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between pt-1.5 border-t border-slate-100 font-label-mono-sm text-label-mono-sm">
+<span class="text-slate-500 font-medium">SLA Tiba:</span>
+<span class="font-bold text-primary">100% On-Time</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action Grid (Horizontal Functional Command Bar) -->
+<section aria-label="Aksi Cepat Operasional">
+<div class="grid grid-cols-3 gap-2">
+<button class="flex flex-col items-center justify-center p-2.5 bg-surface-container-lowest border border-outline-variant/50 rounded-lg hover:bg-surface-container-low active:scale-95 transition-all text-center group">
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-1 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+</div>
+<span class="font-caption text-[11px] leading-tight font-bold text-on-surface">+ Intake Pesanan</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2.5 bg-surface-container-lowest border border-outline-variant/50 rounded-lg hover:bg-surface-container-low active:scale-95 transition-all text-center group">
+<div class="w-8 h-8 rounded-full bg-amber-500/10 text-secondary flex items-center justify-center mb-1 group-hover:bg-secondary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="font-caption text-[11px] leading-tight font-bold text-on-surface">Scan QR Hewan</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2.5 bg-surface-container-lowest border border-outline-variant/50 rounded-lg hover:bg-surface-container-low active:scale-95 transition-all text-center group">
+<div class="w-8 h-8 rounded-full bg-emerald-600/10 text-primary-container flex items-center justify-center mb-1 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+</div>
+<span class="font-caption text-[11px] leading-tight font-bold text-on-surface">Notif WA Tiba</span>
+</button>
+</div>
+</section>
+<!-- Urgent Operational Alerts Widget -->
+<section aria-labelledby="alerts-heading" class="bg-surface-container-lowest p-3.5 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[20px] animate-bounce" data-icon="emergency_home">emergency_home</span>
+<h2 class="font-title-sm text-title-sm font-bold text-on-surface" id="alerts-heading">Peringatan Kritis Operasional</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm bg-error-container text-on-error-container font-bold px-1.5 py-0.5 rounded">2 Perlu Tindakan</span>
+</div>
+<div class="space-y-2">
+<!-- Alert 1: Bahan Baku -->
+<div class="flex items-start gap-2.5 p-2.5 bg-amber-50/70 border border-amber-200/80 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5 shrink-0" data-icon="warning">warning</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-title-sm text-title-sm text-on-secondary-container font-bold">Beras Kebuli Kritis di Dapur</p>
+<span class="font-label-mono-sm text-[10px] text-secondary font-semibold">Gudang Kering</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-700 mt-0.5">Sisa stok fisik hanya <strong class="text-error font-bold">12 kg</strong> (kebutuhan hari ini 45 kg untuk 180 porsi nasi kotak).</p>
+<div class="mt-2 flex gap-2">
+<button class="px-2.5 py-1 bg-surface-container-lowest text-secondary border border-amber-300 rounded font-caption text-caption font-bold shadow-xs hover:bg-amber-100 transition-colors">
+                Order Darurat Logistik
+              </button>
+</div>
+</div>
+</div>
+<!-- Alert 2: Live Video Call Syar'i -->
+<div class="flex items-start gap-2.5 p-2.5 bg-emerald-50/70 border border-emerald-200 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="videocam">videocam</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-title-sm text-title-sm text-primary font-bold">Live Sembelih VC Shohibul</p>
+<span class="bg-primary/10 text-primary font-label-mono-sm text-[10px] font-bold px-1.5 py-0.2 rounded border border-primary/20">Pukul 15:00 WIB</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-700 mt-0.5">Keluarga Bpk. H. Syarifudin (Jadwal RPH Slot #3). Juleha Ustadz Imran siap di kandang.</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded font-caption text-caption font-bold flex items-center gap-1 shadow-xs hover:bg-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="call">call</span> Siapkan Tautan VC
+              </button>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Mulai dalam 32 mnt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Jadwal Pengiriman Hari-H (Real-time active cards) -->
+<section aria-labelledby="delivery-heading" class="space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface tracking-tight" id="delivery-heading">Jadwal Pengiriman Hari-H</h2>
+<p class="font-caption text-caption text-on-surface-variant">Monitoring real-time kurir &amp; penyerahan</p>
+</div>
+<button class="font-caption text-caption text-primary font-bold flex items-center gap-0.5 hover:underline">
+          Lihat Semua (12) <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Card 1: IN_TRANSIT -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant/50 shadow-sm p-3.5 space-y-3 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm text-slate-500 font-bold">ORD-2026-1108-01</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-mono-sm font-semibold tracking-wide bg-amber-50 text-amber-800 border border-amber-200">
+                IN_TRANSIT
+              </span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Bpk. Rizky Ramadhan</h3>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-slate-400" data-icon="location_on">location_on</span>
+              Duren Sawit, Jakarta Timur (Est. Tiba 15:15 WIB)
+            </p>
+</div>
+<div class="text-right">
+<span class="font-label-mono-md text-label-mono-md font-bold text-primary block">Paket Sultan</span>
+<span class="font-caption text-caption text-slate-500">2 Ekor Betina</span>
+</div>
+</div>
+<!-- Order Breakdown -->
+<div class="bg-surface-container-low/60 p-2.5 rounded-lg border border-slate-100 flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="lunch_dining">lunch_dining</span>
+<div>
+<span class="font-medium text-slate-800">80 Box Nasi Kebuli</span>
+<span class="text-slate-400 text-xs"> + Sate &amp; Gulai Pisah</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-slate-600 bg-white px-2 py-1 rounded border border-slate-200">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="ac_unit">ac_unit</span>
+            Mobil Pendingin A
+          </div>
+</div>
+<!-- Driver / Dispatcher Mini Info -->
+<div class="flex items-center justify-between pt-1 text-caption font-caption text-slate-500">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center font-bold text-[10px] text-slate-700">KD</div>
+<span>Kurir: <strong>Kurniawan D.</strong> (B 9842 PXT)</span>
+</div>
+<span class="text-emerald-700 font-label-mono-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="check_circle">check_circle</span> Temp 4.2°C Stabil
+          </span>
+</div>
+<!-- Interactive Card CTA Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-surface-container-low text-on-surface font-title-sm text-title-sm border border-outline-variant hover:bg-slate-200 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="explore">explore</span>
+            Live GPS Armada
+          </button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-primary text-on-primary font-title-sm text-title-sm hover:bg-tertiary-container transition-transform active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+            WA Shohibul
+          </button>
+</div>
+</article>
+<!-- Card 2: QC_READY -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant/50 shadow-sm p-3.5 space-y-3 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm text-slate-500 font-bold">ORD-2026-1108-04</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-mono-sm font-semibold tracking-wide bg-cyan-50 text-cyan-800 border border-cyan-200">
+                QC_READY
+              </span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Ustadz Hanif Prasetyo</h3>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-slate-400" data-icon="location_on">location_on</span>
+              Pesantren Al-Hikmah, Rawamangun
+            </p>
+</div>
+<div class="text-right">
+<span class="font-label-mono-md text-label-mono-md font-bold text-primary block">Paket Berkah</span>
+<span class="font-caption text-caption text-slate-500">1 Ekor Jantan Super</span>
+</div>
+</div>
+<!-- Packaging & Weight QC Details -->
+<div class="bg-surface-container-low/60 p-2.5 rounded-lg border border-slate-100 flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="inventory_2">inventory_2</span>
+<div>
+<span class="font-medium text-slate-800">50 Box Briyani + Tongseng</span>
+<span class="text-slate-400 text-xs"> (Label Doa Terverifikasi)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-primary block">Timbang: 41.8 kg</span>
+<span class="font-label-mono-sm text-[10px] text-slate-500">Checker: H. Ridwan</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-caption font-caption text-slate-500">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-600 text-[16px]" data-icon="schedule">schedule</span>
+<span>Jadwal Muat: <strong>15:30 WIB</strong></span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-slate-600">Armada: Motor Thermal Box 02</span>
+</div>
+<!-- Interactive Card CTA Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-surface-container-low text-on-surface font-title-sm text-title-sm border border-outline-variant hover:bg-slate-200 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-slate-700" data-icon="fact_check">fact_check</span>
+            Cek Lembar QC
+          </button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-tertiary transition-transform active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_shipping">local_shipping</span>
+            Tugaskan Kurir
+          </button>
+</div>
+</article>
+<!-- Card 3 (Cooked in Kitchen Preview) -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 shadow-sm p-3.5 space-y-2 opacity-90">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm text-slate-500 font-bold">ORD-2026-1108-06</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-mono-sm font-semibold tracking-wide bg-amber-50 text-amber-900 border border-amber-200">
+                COOKED
+              </span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Ibu dr. Annisa Melinda</h3>
+<p class="font-caption text-caption text-on-surface-variant">Kramat Jati, Jakarta Timur • Siap Pukul 17:00</p>
+</div>
+<div class="text-right">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-slate-600 block">Dapur Wok #2</span>
+<span class="font-caption text-caption text-slate-400">Tahap Packing Box</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Sharia Slaughter & Certification Micro-Widget -->
+<section class="bg-surface-container-lowest p-3.5 rounded-lg border border-[#E5E0D8] border-t-2 border-t-primary shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm font-bold text-on-surface">Protokol Juleha &amp; Sertifikasi Halal</h4>
+<p class="font-caption text-caption text-outline">Nomor Audit Syar'i: LPPOM-MUI-001600982</p>
+</div>
+</div>
+<button class="text-primary font-caption text-caption font-bold underline">Log RPH</button>
+</div>
+</section>
+</main>
+<!-- Contextual Floating Action Button (Quick New Order / Intake Pesanan) -->
+<aside class="fixed bottom-20 right-4 z-40">
+<button class="flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary-container shadow-lg hover:shadow-xl active:scale-95 transition-all px-4 py-3 rounded-full font-title-sm text-title-sm font-bold border border-primary-fixed/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>Intake Pesanan</span>
+</button>
+</aside>
+<!-- Bottom Navigation Bar (Mandatory Shell from Shared Components JSON) -->
+<!-- Strictly mapped classes according to JSON specifications:
+       Active: bg-primary-container text-on-primary-container rounded-lg px-space-md py-space-xs font-caption text-caption
+       Inactive: text-on-surface-variant px-space-sm py-space-xs font-caption text-caption
+       Shell layout: fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest
+  -->
+<nav aria-label="Navigasi Utama Aplikasi" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest shadow-md md:hidden">
+<!-- Tab 1: Dasbor (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-space-md py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150" href="#dasbor">
+<span class="material-symbols-outlined text-[22px]" data-icon="dashboard" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-caption font-semibold mt-0.5">Dasbor</span>
+</a>
+<!-- Tab 2: Pesanan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-primary px-space-sm py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150" href="#pesanan">
+<span class="material-symbols-outlined text-[22px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-caption mt-0.5">Pesanan</span>
+</a>
+<!-- Tab 3: RPH Syar'i -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-primary px-space-sm py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150" href="#rph">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified">verified</span>
+<span class="font-caption mt-0.5">RPH Syar'i</span>
+</a>
+<!-- Tab 4: Kurir POD -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-primary px-space-sm py-space-xs font-caption text-caption active:scale-95 transition-transform duration-150" href="#kurir">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_shipping">local_shipping</span>
+<span class="font-caption mt-0.5">Kurir POD</span>
+</a>
+</nav>
+</body></html>
